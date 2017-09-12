@@ -1,30 +1,37 @@
 <ion-header>
-
-    <ion-navbar color="primary">
-        <ion-title>home</ion-title>
+    <ion-navbar color="{{data.color}}">
+        <ion-title>Scammer Alert</ion-title>
     </ion-navbar>
-
 </ion-header>
 
-
-<ion-content padding>
-    <ion-list>
-
-        <ion-item>
-            <ion-label floating>Bank Account</ion-label>
-            <ion-input type="number" [(ngModel)]="args"></ion-input>
-        </ion-item>
-
-    </ion-list>
-    <button ion-button block color="primary" (click)="check()">Check</button>
-
-    <ion-card>
-        <ion-card-header>
-            {{data.result}}
-        </ion-card-header>
+<ion-content>
+    <ion-card text-center>
         <ion-card-content>
+            <img src="{{cartoon}}">
+            <h2>{{data.result}}</h2>
             <b>{{data.query}}</b>
             <p>{{data.text}}</p>
+
         </ion-card-content>
     </ion-card>
+
+    <div class="header-content">
+        <ion-col col-12>
+            <ion-item>
+                <ion-label>
+                    <ion-icon name="card"></ion-icon>
+                </ion-label>
+                <ion-input type="tel" placeholder="Bank Number" [(ngModel)]="bankNum" clearInput (input)="enableInput()"></ion-input>
+            </ion-item>
+        </ion-col>
+
+        <ion-row>
+            <ion-col col-6>
+                <button ion-button block (click)="check()" color="secondary" [attr.disabled]="input ? '' : null">Semak</button></ion-col>
+            <ion-col col-6>
+                <button ion-button block (click)="reset()" color="danger">Semula</button>
+            </ion-col>
+        </ion-row>
+    </div>
+
 </ion-content>

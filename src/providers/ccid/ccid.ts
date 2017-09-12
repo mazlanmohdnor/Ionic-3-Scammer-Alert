@@ -14,7 +14,7 @@ export class CcidProvider {
 
   getDetail(args) {
     return this.http.get('http://api.afb.my/priv/v1/semakmule/1/' + args)
-      .map(res => res.json().data);
+      .map(res => res.json());
   }
 
 }
