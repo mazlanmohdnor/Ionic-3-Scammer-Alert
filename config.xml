@@ -3,7 +3,7 @@
     <name>Scammer Detector MY</name>
     <description>Aplikasi ini membolehkan orang awam menyemak akaun bank yang dikhuatiri terbabit dengan transaksi penipuan urus niaga dalam talian.</description>
     <author email="lan.psis@gmail.com" href="http://mazlan.my/">Mohd Mazlan</author>
-    <content original-src="index.html" src="http://10.114.26.196:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-intent href="http://*/*" />

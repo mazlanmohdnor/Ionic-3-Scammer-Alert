@@ -1,0 +1,9 @@
+ keytool -genkey -v -keystore mazlan-scammerdetector.keystore -alias mazlan -keyalg RSA -keysize 2048 -validity 10000
+
+
+----------------------------
+
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mazlan-scammerdetector.keystore s-u.apk mazlan
+
+
+zipalign -v 4 s-u.apk ScammerDetectorMY-1.0.1.apk
