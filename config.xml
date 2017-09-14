@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>MyApp</name>
-    <description>An awesome Ionic/Cordova app.</description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
+<widget id="my.mazlan.scammerdetectormy" version="1.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Scammer Detector MY</name>
+    <description>Aplikasi ini membolehkan orang awam menyemak akaun bank yang dikhuatiri terbabit dengan transaksi penipuan urus niaga dalam talian.</description>
+    <author email="lan.psis@gmail.com" href="http://mazlan.my/">Mohd Mazlan</author>
     <content original-src="index.html" src="http://10.114.26.196:8100" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />

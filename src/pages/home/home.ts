@@ -2,7 +2,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { Clipboard } from '@ionic-native/clipboard';
 import { CcidProvider } from './../../providers/ccid/ccid';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
 
 
 @IonicPage()
@@ -47,7 +47,8 @@ export class HomePage {
     public loadingCtrl: LoadingController,
     public toast:ToastController,
     public clipboard: Clipboard,
-    public socialshare:SocialSharing
+    public socialshare: SocialSharing,
+    private alertCtrl: AlertController
   ) { 
     this.masks = {
       bankNum: [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
@@ -95,6 +96,15 @@ export class HomePage {
         
         console.log(this.cartoon);
       }
+    }, error => {
+      let alert = this.alertCtrl.create({
+        title: 'Sistem Tergendala',
+        subTitle: 'Harap maaf. Sila cuba sebentar lagi.',
+        buttons: ['Dismiss']
+      });
+      this.dismissLoading();
+      
+      alert.present();
     })
   }
 
