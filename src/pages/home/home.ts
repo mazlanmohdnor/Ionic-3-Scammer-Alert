@@ -2,7 +2,8 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { Clipboard } from '@ionic-native/clipboard';
 import { CcidProvider } from './../../providers/ccid/ccid';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController, Platform } from 'ionic-angular';
+import { AdMobFreeBannerConfig, AdMobFree } from '@ionic-native/admob-free';
 
 
 @IonicPage()
@@ -48,14 +49,44 @@ export class HomePage {
     public toast:ToastController,
     public clipboard: Clipboard,
     public socialshare: SocialSharing,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    public adMobFree: AdMobFree,
+    public platform: Platform
   ) { 
     this.masks = {
       bankNum: [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
     };
 
    
-   }
+  }
+  ionViedidLoad() {
+    // start ads
+    this.platform.ready().then(() => {
+      this.showBannerAd();
+    })
+    // end ads
+  }
+  
+  //ads
+  async showBannerAd() {
+    try {
+      const bannerConfig: AdMobFreeBannerConfig = {
+        id: 'ca-app-pub-8469816531943468/9462235634',
+        isTesting: false,
+        autoShow: true
+        // size:'320x32'
+      }
+
+      this.adMobFree.banner.config(bannerConfig);
+
+      const result = await this.adMobFree.banner.prepare();
+      console.log(result);
+    }
+    catch (e) {
+      console.error(e);
+    }
+  }
+//ads end
 
   enableInput() {
     var bankNum = this.bankNum.replace(/\D+/g, '');

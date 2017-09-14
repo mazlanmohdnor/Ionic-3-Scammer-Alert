@@ -15,6 +15,7 @@ import { EmailComposer } from "@ionic-native/email-composer";
 import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { AppRate } from "@ionic-native/app-rate";
 import { Clipboard } from "@ionic-native/clipboard";
+import { AdMobFree } from "@ionic-native/admob-free";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { Clipboard } from "@ionic-native/clipboard";
     EmailComposer,
     InAppBrowser,
     AppRate,
-    Clipboard
+    Clipboard,
+    AdMobFree
   ]
 })
 export class AppModule {}
