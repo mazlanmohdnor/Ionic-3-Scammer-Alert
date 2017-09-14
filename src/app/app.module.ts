@@ -9,6 +9,13 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { CcidProvider } from '../providers/ccid/ccid';
 
+//PLUGINS
+import { SocialSharing } from "@ionic-native/social-sharing";
+import { EmailComposer } from "@ionic-native/email-composer";
+import { InAppBrowser } from "@ionic-native/in-app-browser";
+import { AppRate } from "@ionic-native/app-rate";
+import { Clipboard } from "@ionic-native/clipboard";
+
 @NgModule({
   declarations: [
     MyApp
@@ -16,7 +23,8 @@ import { CcidProvider } from '../providers/ccid/ccid';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    // TextMaskModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -26,7 +34,12 @@ import { CcidProvider } from '../providers/ccid/ccid';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CcidProvider
+    CcidProvider,
+    SocialSharing,
+    EmailComposer,
+    InAppBrowser,
+    AppRate,
+    Clipboard
   ]
 })
 export class AppModule {}

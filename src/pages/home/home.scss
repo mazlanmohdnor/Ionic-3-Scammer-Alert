@@ -5,11 +5,69 @@ page-home {
         width: 100%;
         padding: 5px 10px 5px 10px;
         color: #fff;
-        background-color: #21D4FD;
-        background-image: linear-gradient(19deg, #21D4FD 0%, #B620FF 100%);
+        background-color: map-get($colors, primary);
+        // background-image: linear-gradient(19deg, #21D4FD 0%, #B620FF 100%);
     }
-    img {
-        margin: 0 auto;
-        width: 40%;
+    .card-title-md {
+        color: #fff;
+        margin-top: -50px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+    .item-md {
+        padding-left: 0;
+        margin-bottom: -15px;
+        font-size: 1.6rem;
+        font-weight: normal;
+        text-transform: none;
+        color: #000;
+        background-color: #fff;
+        // -webkit-box-shadow: none;
+        // box-shadow: none;
+        -webkit-transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .item-md.item-block .item-inner {
+        padding-right: 20px;
+        padding-left: 20px;
+        border-bottom: 1px solid #dedede;
+    }
+    .item-md.item-block .item-inner {
+        padding-right: 0px;
+    }
+    .text {
+        margin-top: 10px;
+    }
+    ion-fab[right] {
+        right: 10px;
+        top: 155px;
+        right: 20px;
+    }
+    #bgvid {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -100;
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        transform: translateX(-50%) translateY(-50%);
+        // background: url(http://video.webmfiles.org/big-buck-bunny_trailer.webm) no-repeat;
+        background-size: cover;
+    }
+    .welcome {
+        p {
+            padding: 5px 20px 5px 20px;
+            color: #FFFFFF;
+        }
+        img {
+            margin-top: 20px;
+            width: 40%;
+        }
     }
 }

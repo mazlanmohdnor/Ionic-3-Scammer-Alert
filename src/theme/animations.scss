@@ -1,0 +1,72 @@
+// POP-IN (FLOAT ACTION BUTTON EFFECT) -------------
+.pop-in {
+    animation: pop-in 0.65s;
+}
+
+// POP-IN (FLOAT ACTION BUTTON EFFECT) -------------
+@keyframes pop-in {
+    0% {
+        transform: scale(0);
+    }
+    45% {
+        transform: scale(0);
+    }
+    90% {
+        transform: scale(1.15);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+// POP-OUT (FLOAT ACTION BUTTON EFFECT) -------------
+.pop-out {
+    animation: pop-out 2.5s;
+}
+
+@keyframes pop-out {
+    0% {
+        transform: scale(1);
+    }
+    15% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+// SLIDE-UP ----------------------
+.slide-up {
+    top: 1000px;
+    animation: slide_up 0.4s 0.0625s cubic-bezier(0.07, 0.65, 0, 0.96) forwards !important;
+}
+
+@keyframes slide_up {
+    from {
+        top: 1000px;
+    }
+    to {
+        top: 0px;
+    }
+}
+
+// FADE-IN DOWN ------------------------
+.fadein-down {
+    animation: fadein-down ease 1s;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+    animation-fill-mode: forwards;
+    /*when the spec is finished*/
+}
+
+@keyframes fadein-down {
+    0% {
+        opacity: 0;
+        transform: translate(0px, -25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
