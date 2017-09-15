@@ -4,6 +4,12 @@
             <ion-icon name="menu"></ion-icon>
         </button>
         <ion-title>Scammer Detector MY</ion-title>
+        <!-- <ion-buttons end>
+            <button ion-button icon-right large (click)="pasteNum()">
+              <ion-icon name="clipboard" color="light"></ion-icon>
+              <!-- info -->
+        <!-- </button>
+        </ion-buttons> -->
     </ion-navbar>
 </ion-header>
 
@@ -35,6 +41,10 @@
                 <ion-col>
                     <ion-item>
 
+                        <button ion-button icon-start color="{{data.color}}" outline item-end (click)="takescreenshot()">
+                            <ion-icon name="images"></ion-icon>
+                            Screenshot
+                        </button>
                         <button ion-button icon-start color="{{data.color}}" outline item-end (click)="copy()">
                             <ion-icon name="copy"></ion-icon>
                             Copy

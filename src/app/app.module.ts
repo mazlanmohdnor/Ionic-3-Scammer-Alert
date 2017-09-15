@@ -16,6 +16,7 @@ import { InAppBrowser } from "@ionic-native/in-app-browser";
 import { AppRate } from "@ionic-native/app-rate";
 import { Clipboard } from "@ionic-native/clipboard";
 import { AdMobFree } from "@ionic-native/admob-free";
+import { Screenshot } from "@ionic-native/screenshot";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AdMobFree } from "@ionic-native/admob-free";
     InAppBrowser,
     AppRate,
     Clipboard,
-    AdMobFree
+    AdMobFree,
+    Screenshot
   ]
 })
 export class AppModule {}

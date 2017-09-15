@@ -26,11 +26,13 @@
         "@ionic-native/core": "3.12.1",
         "@ionic-native/email-composer": "^4.2.1",
         "@ionic-native/in-app-browser": "^4.2.1",
+        "@ionic-native/screenshot": "^4.2.1",
         "@ionic-native/social-sharing": "^4.2.1",
         "@ionic-native/splash-screen": "3.12.1",
         "@ionic-native/status-bar": "3.12.1",
         "@ionic/storage": "2.0.1",
         "angular2-text-mask": "8.0.2",
+        "com.darktalker.cordova.screenshot": "^0.1.6",
         "cordova-admob-sdk": "^0.8.0",
         "cordova-android": "^6.2.3",
         "cordova-clipboard": "^1.0.0",
@@ -73,7 +75,8 @@
             "cordova-plugin-inappbrowser": {},
             "cordova-plugin-apprate": {},
             "cordova-clipboard": {},
-            "cordova-plugin-admob-free": {}
+            "cordova-plugin-admob-free": {},
+            "com.darktalker.cordova.screenshot": {}
         },
         "platforms": [
             "android"

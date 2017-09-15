@@ -6,4 +6,4 @@
 jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore mazlan-scammerdetector.keystore s-u.apk mazlan
 
 
-zipalign -v 4 s-u.apk ScammerDetectorMY-1.0.1.apk
+zipalign -v 4 s-u.apk ScammerDetectorMY-1.0.2.apk

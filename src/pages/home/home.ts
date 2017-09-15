@@ -4,6 +4,7 @@ import { CcidProvider } from './../../providers/ccid/ccid';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController, ToastController, AlertController, Platform } from 'ionic-angular';
 import { AdMobFreeBannerConfig, AdMobFree } from '@ionic-native/admob-free';
+import { Screenshot } from "@ionic-native/screenshot";
 
 
 @IonicPage()
@@ -51,21 +52,14 @@ export class HomePage {
     public socialshare: SocialSharing,
     private alertCtrl: AlertController,
     public adMobFree: AdMobFree,
-    public platform: Platform
+    public platform: Platform,
+    public screenshot: Screenshot,
+    public social:SocialSharing
   ) { 
-    this.masks = {
-      bankNum: [/\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/, /\d/]
-    };
-
-   
-  }
-  ionViedidLoad() {
-    // start ads
-    this.platform.ready().then(() => {
-      this.showBannerAd();
-    })
-    // end ads
-  }
+    // show banner
+    this.showBannerAd();
+    
+   }
   
   //ads
   async showBannerAd() {
@@ -74,7 +68,6 @@ export class HomePage {
         id: 'ca-app-pub-8469816531943468/9462235634',
         isTesting: false,
         autoShow: true
-        // size:'320x32'
       }
 
       this.adMobFree.banner.config(bannerConfig);
@@ -165,6 +158,12 @@ export class HomePage {
     });
   }
 
+  takescreenshot() {
+    this.screenshot.URI(80).then((res) => {
+      this.social.share(this.data.query + ' : ' + this.data.text + ' -via Scammer Detector MY', this.data.result, res.URI, 'https://play.google.com/store/apps/details?id=my.mazlan.scammerdetectormy');
+    });
+  }
+
   share() {
     var options = {
       message: this.data.query + " : " + this.data.text + " -via Scammer Detector Malaysia",
@@ -172,8 +171,6 @@ export class HomePage {
       url: 'https://play.google.com/store/apps/details?id=my.mazlan.scammerdetectormy',
       chooserTitle: 'Share via...'
     };
-
-
 
     this.socialshare.shareWithOptions(options);
   }
